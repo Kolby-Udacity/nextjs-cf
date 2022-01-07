@@ -1,17 +1,23 @@
 {
   "private": true,
-  "dependencies": {
-    "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "serve": "11.2.0"
-  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "preexport": "npm run build",
     "export": "next export",
     "prestart": "npm run export",
-    "start": "serve out"
+    "start": "serve out",
+    "wrangle": "next build && next export && npx wrangler pages dev ./out"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^3.3.0",
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "serve": "11.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "typescript": "^4.5.4"
   }
 }
